@@ -1,11 +1,6 @@
-/*
-  Oh Hello!
 
-  These are some base styles so that our tutorial looks good.
-
-  Let's go through the important bits real quick
-*/
 :root {
+  /* css-variables -> border-bottom: 10px solid var(--yellow) */
   --yellow: #ffc600;
   --black: #272727;
 }
@@ -23,7 +18,6 @@ html {
 }
 
 /*
-  WAT IS THIS?!
   We inherit box-sizing: border-box; from our <html> selector
   Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
 */
@@ -37,11 +31,10 @@ body {
   background-image: url("./images/topography.svg"),
     linear-gradient(110deg, #f93d66, #6d47d9);
   background-size: 340px, auto;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px); /* see: https://stackoverflow.com/questions/29211998/make-div-max-height-equal-to-window-height-100px */
   margin: 50px;
-  /* background: white; */
-  background-attachment: fixed;
-  letter-spacing: -1px;
+  background-attachment: fixed; /* so that background image is at fixed position when scrolling (like sticky top)*/
+  letter-spacing: -1px; /* letters are now closer together :) */
 }
 
 h1,
