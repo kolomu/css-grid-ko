@@ -14,11 +14,37 @@
     <div class="item">2</div>
     <div class="item">3</div>
     <div class="item">4</div>
+    <!-- because we added 2 more items which are not 
+    explicitley defined in CSS they take implicit values.
+    -->
+    <div class="item">5</div>
+    <div class="item">6</div>
   </div>
 
   <style>
     .container {
       display: grid;
+      grid-gap: 20px;
+      /* Explicitly defined what the columns will be
+        Rows are implicit because they are not defined */
+      grid-template-columns: 200px 400px;
+      /* CSS Grid Developer Tools: 
+        - solid lines: explicit grid started
+        - dotted lines: explicit columns created
+        - dotted horizontal lines: implicit created
+      */
+
+      grid-template-rows: 50px 80px;
+      /* Now the lines are solid and dashed
+        -> explicit columns and rows! */
+
+      grid-auto-rows: 45px;
+      /* How big the rows will be when they have been added
+         Every extra implicit created row will take this height! */
+
+      grid-auto-columns: 100px;
+      /* see next project "grid-auto-flow" will give 
+      automatically more columns */
     }
   </style>
 </body>
